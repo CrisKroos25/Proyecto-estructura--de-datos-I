@@ -6,9 +6,9 @@ def solicitar_datos_vehiculo():
     print("\nIngresando nuevo vehiculo:")
     print("El número de placa debe cumplir con el formato: 3 letras mayúsculas seguidas de 2 números.")
 
-    placa = input("Ingrese la placa del vehículo: ").strip().upper()
-    marca = input("Ingrese la marca del vehículo: ").strip()
-    modelo = input("Ingrese el modelo del vehículo: ").strip()
+    placa = input("Ingrese la placa del vehículo: ")
+    marca = input("Ingrese la marca del vehículo: ")
+    modelo = input("Ingrese el modelo del vehículo: ")
     anio = int(input("Ingrese el año: "))
     kilometraje = int(input("Ingrese el kilometraje: "))
 
@@ -30,7 +30,7 @@ def vehiculo_seleccionado(vehiculo):
         print("4. Calcular costos de mantenimiento")
         print("5. Volver al menú principal")
 
-        opcion = input("Seleccione una opción: ").strip()
+        opcion = input("Seleccione una opción: ")
 
         match opcion:
             case "1":
@@ -39,7 +39,7 @@ def vehiculo_seleccionado(vehiculo):
             case "2":
                 vehiculo.agregar_mantenimiento()
             case "3":
-                vehiculo.consultar_mantenimientos()
+                vehiculo.consultar_matenimientos()
             case "4":
                 vehiculo.consultar_costos_mantenimiento()
             case "5":
@@ -59,7 +59,7 @@ def menu():
         print("4. Listar todos los vehículos registrados")
         print("5. Salir")
 
-        opcion = input("Seleccione una opción: ").strip()
+        opcion = input("Seleccione una opción: ")
 
         match opcion:
             case "1":
@@ -71,14 +71,14 @@ def menu():
                 if nueva_flota.esta_vacia():
                     print("\nNo existen vehículos en la flota.")
                 else:
-                    placa = input("\nIngrese la placa del vehículo a eliminar: ").strip().upper()
+                    placa = input("\nIngrese la placa del vehículo a eliminar: ")
                     nueva_flota.eliminar_vehiculo(placa)
 
             case "3":
                 if nueva_flota.esta_vacia():
                     print("\n️No existen vehículos en la flota.")
                 else:
-                    placa = input("Ingrese la placa del vehículo a buscar: ").strip().upper()
+                    placa = input("Ingrese la placa del vehículo a buscar: ")
                     vehiculo = nueva_flota.buscar_vehiculo(placa)
                     if vehiculo:
                         vehiculo_seleccionado(vehiculo)
@@ -99,6 +99,3 @@ def menu():
 
 if __name__ == "__main__":
     menu()
-
-
-

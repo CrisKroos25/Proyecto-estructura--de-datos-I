@@ -53,8 +53,8 @@ class FlotaVehiculos():
                 elif temp == self.__cabeza:
                     self.final = self.__cabeza
                     while self.__final.siguiente != self.__cabeza:
-                        self.__final = self.final.siguiente
-                    self.cabeza = self.__cabeza.siguiente
+                        self.__final = self.__final.siguiente
+                    self.__cabeza = self.__cabeza.siguiente
                     self.__final.siguiente = self.__cabeza
                 else:
                     previo.siguiente = temp.siguiente
